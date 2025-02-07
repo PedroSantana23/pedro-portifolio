@@ -25,12 +25,12 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-  width: 190px;
+  width: 130px;
   height: 50px;
   background: #e7e7e7;
   color: #000000;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 20px;
   border: 1.5px solid #000000;
   transition: background 0.5s ease, color 0.3s ease;
 
@@ -64,6 +64,7 @@ const TitleWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 10px; 
+  font-size: 10px;
 `;
 
 const NavBar = () => {

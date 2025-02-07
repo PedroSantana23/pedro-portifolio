@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import React from "react";
+import { SiGmail } from "react-icons/si";
 import "@fontsource/fira-code";
 import "../../../public/foto_perfil.png";
 import "../../../public/gmail.svg";
 import "../../../public/copy.svg";
 
 const ApresentationContainer = styled.div`
+  width: 1920px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -50,7 +52,7 @@ const FotoDePerfil = styled.img`
   height: 400px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 20px;
+
 `;
 
 const EmailContainer = styled.div`
@@ -69,15 +71,14 @@ const EmailButton = styled.button`
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
-  border: none;
   margin-top: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.4);
   gap: 15px; /* Espaçamento simétrico entre os elementos internos */
   font-family: "Fira Code", monospace;
   font-size: 16px;
   color: #000000;
+  border: 2px solid #000000;
   cursor: pointer;
-
   &:hover {
     background-color: rgb(165, 165, 165);
     transition: 0.3s;
@@ -87,6 +88,16 @@ const EmailButton = styled.button`
 const Icon = styled.img`
   width: 40px;
   height: 40px;
+`;
+
+const Square = styled.div`
+  width: 60px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000000;
+  position: initial;
 `;
 
 const Apresentation = () => {
@@ -108,9 +119,11 @@ const Apresentation = () => {
         <EmailContainer>
             <h2>Me mande um e-mail</h2>
           <EmailButton>
-            <Icon src="gmail.svg" />
+            <Square>
+              <Icon src="/gmail.svg" />
+            </Square>
             <strong>ph.silva.santana@gmail.com</strong>
-            <Icon src="copy.svg" />
+            <Icon src="/copy.svg" />
           </EmailButton>
         </EmailContainer>
       </InfoContainer>
