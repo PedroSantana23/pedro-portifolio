@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React from "react";
-import { SiGmail } from "react-icons/si";
 import "@fontsource/fira-code";
 import "../../../public/foto_perfil.png";
 import "../../../public/gmail.svg";
