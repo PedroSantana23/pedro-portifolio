@@ -9,7 +9,7 @@ import "../../../public/code.svg";
 const NavBarContainer = styled.div`
   width: 100%;
   height: 150px;
-  background-color: #e7e7e7;
+  background-color: #d6c6bb;
   display: flex;
   justify-content: space-between; 
   align-items: center;
@@ -25,17 +25,19 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-  width: 130px;
-  height: 50px;
-  background: #e7e7e7;
+  width: 120px;
+  height: 45px;
+  background: linear-gradient(to right, #000000 50%, #d6c6bb 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
   color: #000000;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   border: 1.5px solid #000000;
-  transition: background 0.5s ease, color 0.3s ease;
+  transition: background-position 0.5s ease, color 0.3s ease;
 
   &:hover {
-    background: #000000;
+    background-position: left bottom;
     color: #ffffff;
   }
 `;
