@@ -3,18 +3,21 @@ import styled from "styled-components";
 import "@fontsource/fira-code";
 
 const WorksContainer = styled.div`
-  width: 1700px;
+  width: 100%;
+  max-width: 1700px; // Limita a largura máxima
   height: auto;
   background-color: #ffffff;
   display: flex;
-  align-items: flex-start; // Alinha os itens à esquerda
+  align-items: flex-start;
   flex-direction: column;
-  padding-left: 20px; // Adiciona um padding à esquerda para o TitleContainer
+  padding: 20px; // Adiciona padding geral
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.4);
+  margin: auto; // Centraliza o conteúdo
 `;
 
 const TitleContainer = styled.div`
-  width: auto;
+  width: 100%;
+  max-width: 250px; // Limita a largura máxima
   height: 45px;
   background-color: #3a3a3a;
   display: flex;
@@ -22,7 +25,7 @@ const TitleContainer = styled.div`
   justify-content: center;
   font-family: "Fira Code", monospace;
   border-radius: 15px 0 15px 0;
-  margin-top: 20px;
+  margin-top: 20px
 `;
 
 const Title = styled.h2`
@@ -32,51 +35,38 @@ const Title = styled.h2`
 
 const Description = styled.div`
   width: 100%;
+  max-width: 1400px; // Limita a largura máxima
   font-family: "Fira Code", monospace;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px; // Adiciona um espaço entre o TitleContainer e o WhatIDo
-  padding: 0 20px; // Adiciona um padding para evitar que o texto encoste nas bordas
+  margin-top: 20px;
+  padding: 0 20px;
+  text-align: center; // Centraliza o texto
 `;
 
 const SquaresContainer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 100px;
+  justify-content: space-around; // Distribui os quadrados uniformemente
+  flex-wrap: wrap; // Permite que os quadrados se ajustem em telas menores
+  gap: 20px; // Espaçamento entre os quadrados
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
 `;
 
-const BlueSquare = styled.div`
-  width: 400px;
+const Square = styled.div`
+  width: 100%;
+  max-width: 400px; // Limita a largura máxima
   height: 400px;
-  background-color: #5384ee;
+  background-color: ${(props) => props.bgColor || "#5384ee"};
   border: 2.5px solid #000000;
   color: #ffffff;
+  margin: 10px; // Espaçamento entre os quadrados
 `;
 
-const CyanSquare = styled.div`
-  width: 400px;
-  height: 400px;
-  background-color: #53b3ee;
-  border: 2.5px solid #000000;
-  color: #ffffff;
-`;
-
-const PurpleSquare = styled.div`
-  width: 400px;
-  height: 400px;
-  background-color: #6b53ee;
-  border: 2.5px solid #000000;
-  color: #ffffff;
-`;
-
-const Works = () => {
+const Works = ({ children }) => {
   return (
     <WorksContainer>
       <TitleContainer>
@@ -91,9 +81,9 @@ const Works = () => {
         </p>
       </Description>
       <SquaresContainer>
-        <BlueSquare></BlueSquare>
-        <CyanSquare></CyanSquare>
-        <PurpleSquare></PurpleSquare>
+        <Square bgColor="#5384ee" />
+        <Square bgColor="#53b3ee" />
+        <Square bgColor="#6b53ee" />
       </SquaresContainer>
       <TitleContainer>
         <Title>Projetos</Title>
@@ -101,6 +91,7 @@ const Works = () => {
       <Description>
         <p>Confira alguns projetos que eu desenvolvi:</p>
       </Description>
+      {children}
     </WorksContainer>
   );
 };

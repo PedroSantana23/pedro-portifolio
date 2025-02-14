@@ -3,6 +3,7 @@ import NavBar from './components/NavBar';
 import Apresentation from './components/Apresentation';
 import Techs from './components/Techs';
 import Works from './components/Works';
+import Project from './components/Projects';
 
 function App() {
 
@@ -11,7 +12,9 @@ function App() {
       <NavBar />
       <Apresentation />
       <Techs />
-      <Works />
+      <Works>
+        <Project />
+      </Works>
     </>
   );
 };
